@@ -10,11 +10,9 @@ namespace NeiroNet1
     {
         public  string name;
         public  double[,] veight;
-        private double output;
         public  int countTrainig;
 
-         public Neiron() { output = 0; }
-         public double GetCurrentOut() { return output; }
+         public Neiron() {}
          public string GetName() { return name; }
 
          public void Clear(string name, int x, int y)
@@ -24,7 +22,6 @@ namespace NeiroNet1
              for (int n = 0; n < veight.GetLength(0); n++)
                  for (int m = 0; m < veight.GetLength(1); m++) veight[n, m] = 0;
              countTrainig = 0;
-             output = 0;
          }
 
          public double GetRes(int[,] data){
@@ -33,8 +30,7 @@ namespace NeiroNet1
              for (int n = 0; n < veight.GetLength(0); n++)
                  for (int m = 0; m < veight.GetLength(1); m++) 
                      res += 1 - Math.Abs(veight[n, m] - data[n, m]);
-             output = res;
-             return output / (veight.GetLength(0) * veight.GetLength(1));
+             return res / (veight.GetLength(0) * veight.GetLength(1));
          }
 
          public int Training(int[,] data)

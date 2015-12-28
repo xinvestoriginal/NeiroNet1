@@ -56,3 +56,4 @@ C:\FREE\NeiroNet1\NeiroNet1\obj\Debug\NeiroNet1.pdb
 C:\FREE\NeiroNet1\NeiroNet1\obj\Debug\NeiroNet1.MainForm.resources
 G:\MD\ESKAPE\EXTRA\PROJECTS\NeiroNet\NeiroNet1\NeiroNet1\obj\Debug\NeiroNet1.MainForm.resources
 C:\FREE\NeiroNet1\NeiroNet1\obj\Debug\NeiroNet1.csprojResolveAssemblyReference.cache
+G:\MD\ESKAPE\EXTRA\PROJECTS\NeiroNet\NeiroNet1\NeiroNet1\obj\Debug\NeiroNet1.csprojResolveAssemblyReference.cache
