@@ -27,9 +27,9 @@ namespace NeiroNet1
 
         private static List<Neiron> InitWeb()
         {
-            if (!File.Exists(memory)) return CreateDefaultWeb();
+            if (!File.Exists(memory)) return new List<Neiron>();
             string[] lines = File.ReadAllLines(memory);
-            if (lines.Length == 0) return CreateDefaultWeb();
+            if (lines.Length == 0)    return new List<Neiron>();
             string jStr = lines[0];
             JavaScriptSerializer json = new JavaScriptSerializer();
             List<Object> objects = json.Deserialize<List<Object>>(jStr);
@@ -62,26 +62,7 @@ namespace NeiroNet1
             System.IO.StreamWriter file = new System.IO.StreamWriter(memory);
             file.WriteLine(jStr);
             file.Close();
-        }
-
-
-        private static List<Neiron> CreateDefaultWeb()
-        {
-            List<Neiron> res = new List<Neiron>();
-            //string[] files = Directory.GetFiles(Environment.CurrentDirectory + "\\img", "*.bmp");
-            //foreach (string link in files)
-            //{
-            //    string litera = Path.GetFileNameWithoutExtension(link);
-            //    int[,] array = NeiroGraphUtils.GetArrayFromBitmap((Bitmap)Image.FromFile(link, true));
-            //    Neiron n = new Neiron();
-            //    n.Clear(litera, array.GetLength(0), array.GetLength(1));
-            //    n.Training(array);
-            //    res.Add(n);
-            //}
-            return res;
-        }
-
-       
+        }      
 
         public string[] GetLiteras()
         {

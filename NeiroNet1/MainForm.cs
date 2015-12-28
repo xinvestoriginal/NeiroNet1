@@ -98,7 +98,12 @@ namespace NeiroNet1
 
         private void toMemoryToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string litera = (string)comboBox.Items[comboBox.SelectedIndex];
+            string litera = comboBox.SelectedIndex >= 0 ? (string)comboBox.Items[comboBox.SelectedIndex] : comboBox.Text;
+            if (litera.Length == 0)
+            {
+                MessageBox.Show("Name = NULL");
+                return;
+            }
             nw.SetTraining(litera, arr);
             NeiroGraphUtils.ClearImage(pictureBox1);
             NeiroGraphUtils.ClearImage(pictureBox2);
@@ -164,6 +169,7 @@ namespace NeiroNet1
         private void enableTrainingToolStripMenuItem_Click(object sender, EventArgs e)
         {
             enableTraining = true;
+            MessageBox.Show("Training mode is enable.");
         }
     }
 }

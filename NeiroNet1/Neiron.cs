@@ -34,7 +34,7 @@ namespace NeiroNet1
                  for (int m = 0; m < veight.GetLength(1); m++) 
                      res += 1 - Math.Abs(veight[n, m] - data[n, m]);
              output = res;
-             return output;
+             return output / (veight.GetLength(0) * veight.GetLength(1));
          }
 
          public int Training(int[,] data)
